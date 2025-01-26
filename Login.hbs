@@ -1,0 +1,113 @@
+<html>
+<head>
+
+    <link rel='stylesheet' href="semantic.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="semantic.min.js"></script>
+    <style>
+
+            .LogInScreen{
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                background-image: url('back.jpg');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 100%;
+                width: 100%;
+            }
+
+            .Welcome{
+                align-self:center;
+                background-origin: content-box;
+                height: 50px;
+                width: 800px;
+            }
+
+            .SignUp{
+                text-align: center;
+                margin-top: 100px;
+                align-self: center;
+                height: 50px;
+                width: 800px;
+            }
+
+            #title {
+                text-align: center;
+                background-color: black;
+                color: bisque;
+                border-radius: 30px;
+                background: linear-gradient(to right,
+                    rgba(0,0,0,0) 0%,
+                    rgba(0,0,0,1) 15%,
+                    rgba(0,0,0,1) 25%,
+                    rgba(0,0,0,1) 25%,
+                    rgba(0,0,0,1) 35%,
+                    rgba(0,0,0,1) 35%,
+                    rgba(0,0,0,1) 50%,
+                    rgba(0,0,0,1) 65%,
+                    rgba(0,0,0,1) 65%,
+                    rgba(0,0,0,1) 75%,
+                    rgba(0,0,0,1) 75%,
+                    rgba(0,0,0,1) 85%,
+                    rgba(0,0,0,0) 100%);
+            }
+
+            .LogIn{
+                align-self:center;
+                padding-top: 70px;
+            }
+
+            #InfoInput{
+                padding: 5px 30px 30px 30px;
+                align-self: center;
+                border-radius: 20px;
+                height: 300px;
+                width: 500px;
+                background-color: rgb(164, 164, 219);
+                opacity: 0.9;
+            }
+
+            #field{
+                width: 100%;
+            }
+
+
+    </style>
+</head>
+<body>
+<div class="LogInScreen">
+
+    <div class="Welcome">
+        <h1 id="title">~Welcome to The Snake Game~</h1>
+    </div>
+
+    <div class="LogIn">
+        <div id=InfoInput>
+            <br>
+            <form class="ui form" action="/" method="post">
+                <div class="field">
+                    <label>Username (email)</label>
+                    <input type="text" name="username" placeholder="Type to enter">
+                </div>
+                <br>
+                <div class="field">
+                    <label>Password</label>
+                    <input type="text" name="password" placeholder="Type to enter">
+                </div>
+                <br>
+                <button class="ui button" type="submit">Submit</button>
+            </form>
+        </div>
+        {{#if hasError}}
+        <div class="ui negative message">
+            <div class="header">Error</div>
+            <p>Wrong credentials</p>
+        </div>
+        {{/if}}
+    </div>
+
+</div>
+</body>
+</html>
